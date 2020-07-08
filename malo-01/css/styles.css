@@ -1,0 +1,75 @@
+/* 
+  Table of Contents: 
+    1. Roboto Font CDN
+    2. Global Styles
+    3. Nav
+*/
+
+/* 1. Roboto Font CDN */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* 2. Global Styles */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  /* colors */
+  --black: #000;
+  --white: #fff;
+}
+
+html {
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 117rem;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+/* 3. Nav */
+nav {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  flex-basis: 40%;
+}
+
+.logo-icon, .logo-name {
+  font-size: 2rem;
+}
+
+.logo-name {
+  margin-left: 1rem;
+  text-transform: uppercase;
+}
+
+.nav-list {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list a {
+  font-size: 1.8rem;
+  color: var(--black);
+  text-transform: capitalize;
+  font-weight: 500;
+}
