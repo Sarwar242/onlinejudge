@@ -12,6 +12,7 @@ venv/Scripts/activate or
 venv/Scripts/activate.bat
 (Windows)
 venv\Scripts\activate.bat
+..\venv\Scripts\activate.bat
 ===========================================================================
 ===========================================================================
  =>To deactivate Virtual Environment 
