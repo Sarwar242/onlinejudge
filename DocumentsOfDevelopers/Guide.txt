@@ -31,3 +31,4 @@ python manage.py createsuperuser
 ===========================================================================
 git init
 git remote add origin https://github.com/Sarwar242/onlinejudge.git
+git pull origin master
