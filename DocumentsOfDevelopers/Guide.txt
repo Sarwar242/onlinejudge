@@ -12,11 +12,11 @@ venv/Scripts/activate or
 venv/Scripts/activate.bat
 (Windows)
 venv\Scripts\activate.bat
-..\venv\Scripts\activate.bat
 ===========================================================================
 ===========================================================================
  =>To deactivate Virtual Environment 
- deactivate
+ deactivate or
+ venv\Scripts\deactivate.bat
 ===========================================================================
 ===========================================================================
 ===========================================================================
@@ -29,6 +29,13 @@ python manage.py migrate
 ===========================================================================
 python manage.py createsuperuser
 ===========================================================================
-git init
-git remote add origin https://github.com/Sarwar242/onlinejudge.git
-git pull origin master
+===========================================================================
+git init => initiate git
+git remote add origin https://github.com/Sarwar242/onlinejudge.git => connecting to remote repository
+git pull origin master => pulling files from remote
+git status => to get chnge log
+git add . => to stash git
+git commit -m "commit message" => to commit to the local repository
+git push origin master => updating remote with local
+===========================================================================
+===========================================================================
