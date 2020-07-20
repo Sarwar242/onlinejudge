@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Rating_Change',
     'Submission',
     'Judge',
+    'colorfield'
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'OnlineJudge.urls'
+
 
 TEMPLATES = [
     {
