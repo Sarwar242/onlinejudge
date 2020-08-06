@@ -1,11 +1,14 @@
 from django.db import models
 
 # Create your models here.
-class Countries(models.Model):
-    id=models.IntegerField(primary_key=True)
+class Country(models.Model):
     name=models.CharField(max_length=50)
+    def __str__(self) -> object:
+        return '{}'.format(self.name)
 
-class Institutions(models.Model):
-    id=models.IntegerField(primary_key=True)
+class Institution(models.Model):
     name=models.CharField(max_length=100)
-    country_id=models.ForeignKey(Countries, on_delete=models.CASCADE)
+    country_id=models.ForeignKey(Country, on_delete=models.CASCADE)
+
+    def __str__(self) -> object:
+        return '{}'.format(self.name)

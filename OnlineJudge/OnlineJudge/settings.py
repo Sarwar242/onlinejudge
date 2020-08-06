@@ -41,10 +41,9 @@ INSTALLED_APPS = [
     'Team',
     'Rating',
     'Tag',
-    'User',
+    'Profile',
     'Problem',
     'Contest',
-    'Rating_Change',
     'Submission',
     'Judge',
     'colorfield'

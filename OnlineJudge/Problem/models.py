@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
-from Tag import models as Tag_models
+from Tag import models as Tag_model
 import os
 from uuid import uuid4
 from django.utils.deconstruct import deconstructible
@@ -18,8 +18,7 @@ class UploadToPathAndRename(object):
             filename='{}.{}'.format(uuid4().hex, ext)
         return os.path.join(self.sub_path, filename)
 #FileField(upload_to=path_and_rename('output_validator/'),)
-class Problems(models.Model):
-    problem_id=models.IntegerField(primary_key=True)
+class Problem(models.Model):
     url_ext=models.CharField(
         max_length=10, 
         validators=[RegexValidator('^[A-Z]*$','Only uppercase letters allowed.')],
@@ -33,17 +32,25 @@ class Problems(models.Model):
     max_runtime=models.DurationField()
     max_memory=models.IntegerField()
 
-class Problem_Tags(models.Model):
-    problem_id=models.ForeignKey(Problems, on_delete=models.CASCADE)
-    tag_id=models.ForeignKey(Tag_models.Tags, on_delete=models.CASCADE)
+    def __str__(self) -> object:
+        return '{}'.format(self.name)
+
+
+class Problem_Tag(models.Model):
+    problem_id=models.ForeignKey(Problem, on_delete=models.CASCADE)
+    tag_id=models.ForeignKey(Tag_model.Tag, on_delete=models.CASCADE)
+    def __str__(self) -> object:
+        return '{}'.format(self.problem_id.name)
 
     class Meta:
         unique_together = (("problem_id", "tag_id"),)
 
-class Inputs(models.Model):
-    input_id=models.IntegerField(primary_key=True)
+class Input(models.Model):
     input=models.TextField()
     is_simple=models.BooleanField(default=True)
-    problem_id=models.ForeignKey(Problems, on_delete=models.CASCADE)
+    problem_id=models.ForeignKey(Problem, on_delete=models.CASCADE)
+    def __str__(self) -> object:
+        return '{}'.format(self.input)
+
 
 

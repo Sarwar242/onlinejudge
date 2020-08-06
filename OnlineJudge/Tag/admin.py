@@ -1,4 +1,4 @@
 from django.contrib import admin
-from Tag.models import Tags
+from Tag.models import Tag
 # Register your models here.
-admin.site.register(Tags)
+admin.site.register(Tag)

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from Rating.models import Rating_Statuses
+from Rating.models import Rating_Status
 # Register your models here.
-admin.site.register(Rating_Statuses)
+admin.site.register(Rating_Status)

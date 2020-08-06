@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Institution.models import Countries, Institutions
+from Institution.models import Country, Institution
 # Register your models here.
-admin.site.register(Countries)
-admin.site.register(Institutions)
+admin.site.register(Country)
+admin.site.register(Institution)

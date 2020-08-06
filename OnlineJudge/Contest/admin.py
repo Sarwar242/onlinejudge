@@ -1,7 +1,7 @@
 from django.contrib import admin
-from Contest.models import Contests, Conetest_Problems, Announcements, Ask_Questions
+from Contest.models import Contest, Conetest_Problem, Announcement, Ask_Question
 # Register your models here.
-admin.site.register(Contests)
-admin.site.register(Conetest_Problems)
-admin.site.register(Announcements)
-admin.site.register(Ask_Questions)
+admin.site.register(Contest)
+admin.site.register(Conetest_Problem)
+admin.site.register(Announcement)
+admin.site.register(Ask_Question)
