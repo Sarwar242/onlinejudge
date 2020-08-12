@@ -32,20 +32,9 @@ python manage.py createsuperuser
 List SuperUsers:
 1.
 name:admin
-email:admin@onlinejudge.com
-password:1234
-2.
-name:sarwar
-email:sarwar@onlinejudge.com
-password:1234
-3.
-name:rifat
-email:rifat@onlinejudge.com
-password:1234
-4.
-name:malo
-email:malo@onlinejudge.com
-password:1234
+email:admin@site.com
+password:123456
+
 ===========================================================================
 ===========================================================================
 git init => initiate git
