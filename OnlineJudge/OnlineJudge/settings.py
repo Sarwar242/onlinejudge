@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'Contest',
     'Submission',
     'Judge',
-    'colorfield'
+    'colorfield',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
