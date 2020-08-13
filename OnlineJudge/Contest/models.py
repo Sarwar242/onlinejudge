@@ -22,6 +22,8 @@ class Conetest_Problem(models.Model):
 
     class Meta:
         unique_together = (("contest_id", "problem_id"),)
+        verbose_name = "Conntest Problem"
+        verbose_name_plural = "Contest Problems"
 
 class Announcement(models.Model):
     contest_id=models.ForeignKey(Contest, on_delete=models.CASCADE)
@@ -37,3 +39,6 @@ class Ask_Question(models.Model):
     is_public=models.BooleanField(default=False)
     def __str__(self) -> object:
         return '{}'.format(self.question)
+    class Meta:
+        verbose_name = "Ask Question"
+        verbose_name_plural = "Ask Questions"

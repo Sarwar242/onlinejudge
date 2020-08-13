@@ -11,6 +11,9 @@ class Rating_Status(models.Model):
         
     def __str__(self) -> object:
         return '{}'.format(self.status)
+    class Meta:
+        verbose_name = "Rating Status"
+        verbose_name_plural = "Rating Status"
 
 
 class Rating_Change(models.Model):
@@ -23,3 +26,5 @@ class Rating_Change(models.Model):
 
     class Meta:
         unique_together = (("contest_id", "profile_id"),)
+        verbose_name = "Rating Change"
+        verbose_name_plural = "Rating Changes"

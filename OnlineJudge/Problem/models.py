@@ -44,6 +44,8 @@ class Problem_Tag(models.Model):
 
     class Meta:
         unique_together = (("problem_id", "tag_id"),)
+        verbose_name = "Problem Tag"
+        verbose_name_plural = "Problem Tags"
 
 class Input(models.Model):
     input=models.TextField()

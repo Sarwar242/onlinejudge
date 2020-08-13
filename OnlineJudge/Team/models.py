@@ -17,3 +17,5 @@ class Team_Member(models.Model):
     
     class Meta:
         unique_together = (("team_id", "profile_id"),)
+        verbose_name = "Team Member"
+        verbose_name_plural = "Team Members"

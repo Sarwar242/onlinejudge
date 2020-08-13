@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #third party apps
+    'rest_framework',
+    
+    #local apps
     'Institution',
     'Team',
     'Rating',
@@ -47,7 +52,7 @@ INSTALLED_APPS = [
     'Submission',
     'Judge',
     'colorfield',
-    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
