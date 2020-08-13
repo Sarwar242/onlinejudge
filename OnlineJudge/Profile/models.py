@@ -39,7 +39,7 @@ class Profile(models.Model):
     institution_id=models.ForeignKey(Institution_model.Institution, on_delete=models.SET_NULL,  null=True)
 
     def __str__(self) -> object:
-        return '{}'.format(self.user.username)
+        return '{}'.format(self.user)
 
     class Meta:
         verbose_name = 'Profile'
