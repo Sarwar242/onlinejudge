@@ -12,7 +12,8 @@ from django.utils.deconstruct import deconstructible
 @deconstructible
 class UploadToPathAndRename(object):
     def __init__(self, path):
-        self.sub_path=path
+        self.sub_path = path
+               
     def __call__(self, instance, filename):
         ext=filename.split('.')[-1]
         if instance.pk:

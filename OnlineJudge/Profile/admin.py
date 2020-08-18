@@ -1,7 +1,6 @@
 from django.contrib import admin
-from Profile.forms import ProfileForm
-from Profile.models import Profile
-
+from .models import Profile
+from .forms import ProfileForm
 # Register your models here.
 
 class ProfileAdmin(admin.ModelAdmin):
