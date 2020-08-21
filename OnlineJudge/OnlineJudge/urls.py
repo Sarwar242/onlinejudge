@@ -8,8 +8,7 @@ urlpatterns = [
     #path('', include('Judge.urls')),
     path('admin/', admin.site.urls),
     path('api/profile/',include('Profile.urls')),
-    path('api/auth/jwt/', obtain_jwt_token),
-    path('api/auth/jwt/refresh/', refresh_jwt_token),
+    path('api/auth/',include('Accounts.urls')),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
