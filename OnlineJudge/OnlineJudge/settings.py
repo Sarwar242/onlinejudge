@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'Submission',
     'Judge',
     'colorfield',
-    
+    'Accounts',
 ]
 
 MIDDLEWARE = [
