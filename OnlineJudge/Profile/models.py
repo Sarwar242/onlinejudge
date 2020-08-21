@@ -16,10 +16,7 @@ class UploadToPathAndRename(object):
                
     def __call__(self, instance, filename):
         ext=filename.split('.')[-1]
-        if instance.pk:
-            filename='{}.{}'.format(instance.pk, ext)
-        else:
-            filename='{}.{}'.format(uuid4().hex, ext)
+        filename='{}.{}'.format(uuid4().hex, ext)
         return os.path.join(self.sub_path, filename)
 
 
@@ -31,11 +28,10 @@ class profileManager(models.Manager):
         return profileQuerySet(self.model, using=self._db)
 
 class Profile(models.Model):
-    #user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
-    user =models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
+    user =models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     google_id=models.CharField(max_length=100, null=True, blank=True)
     mobile_no=PhoneNumberField(unique=True,  null=True)
-    cur_rating=models.IntegerField(null=True)
+    cur_rating=models.IntegerField(default=0,null=True)
     have_profile_image=models.ImageField(upload_to=UploadToPathAndRename(os.path.join('upload','profile_image')), null=True)
     institution_id=models.ForeignKey(Institution_model.Institution, on_delete=models.SET_NULL,  null=True)
 
