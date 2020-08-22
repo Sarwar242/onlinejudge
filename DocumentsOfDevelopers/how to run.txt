@@ -1,0 +1,19 @@
+1. Install Python 3.8 from: https://www.python.org/ftp/python/3.8.5/python-3.8.5.exe
+2. Install Git from: https://git-scm.com/download/win
+3. Create a folder for the project named OJ.
+4. On the project folder(OJ): right click > Git Bash Here > 
+5.  On the git bash tarminal:
+	git init
+	git remote add origin https://github.com/Sarwar242/onlinejudge.git
+	git pull origin master
+6. This steps will download the project files.
+7. On the same folder(OJ): right click > Open With Code (VS Code) >
+8. When the VS Code opens press : Ctrl+Shift+` , these three keys together to open terminal.
+			or, on the project folder: alt+d, then type cmd
+9. On the terminal or cmd: 
+	venv\Scripts\activate.bat
+	cd OnlineJudge
+	py manage.py runserver
+10. This steps will run the server for the project and now the project is live.
+11. Link of the live server: 127.0.0.1:8000
+12. Best of luck.
