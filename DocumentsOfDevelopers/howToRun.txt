@@ -9,7 +9,7 @@
 6. This steps will download the project files.
 7. On the same folder(OJ): right click > Open With Code (VS Code) >
 8. When the VS Code opens press : Ctrl+Shift+` , these three keys together to open terminal.
-			or, on the project folder: alt+d, then type cmd
+			or, on the project folder: alt+d, then type cmd and press Enter, this will open cmd on the folder.
 9. On the terminal or cmd: 
 	venv\Scripts\activate.bat
 	cd OnlineJudge
