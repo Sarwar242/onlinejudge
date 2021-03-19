@@ -7,7 +7,7 @@ Django==3.1
 django-colorfield==0.3.2
 django-filter==2.3.0
 django-phonenumber-field==4.0.0
-djangorestframework==3.11.1
+djangorestframework==3.11.2
 enum34==1.1.10
 isort==4.3.21
 lazy-object-proxy==1.4.3
