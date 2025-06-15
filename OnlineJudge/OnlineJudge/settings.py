@@ -73,8 +73,12 @@ WSGI_APPLICATION = 'OnlineJudge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'onlinejudge_db',
+        'USER': 'oj_user',
+        'PASSWORD': 'secure_password_placeholder',  # IMPORTANT: This is a placeholder, change in production!
+        'HOST': 'db',  # Or 'localhost' if PostgreSQL is running locally
+        'PORT': '5432',
     }
 }
 
@@ -155,3 +159,11 @@ JWT_AUTH = {
     'JWT_AUTH_COOKIE': None,
 
 }
+
+# Celery Configuration Options
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE

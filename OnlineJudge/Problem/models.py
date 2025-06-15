@@ -49,6 +49,7 @@ class Problem_Tag(models.Model):
 
 class Input(models.Model):
     input=models.TextField()
+    expected_output = models.TextField(default='')
     is_simple=models.BooleanField(default=True)
     problem_id=models.ForeignKey(Problem, on_delete=models.CASCADE)
     def __str__(self) -> object:

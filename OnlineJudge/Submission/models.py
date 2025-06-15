@@ -14,6 +14,7 @@ class Submission(models.Model):
     memory_used=models.IntegerField()
     submitted_at=models.DateTimeField(auto_now_add=True)
     verdict=models.CharField(max_length=5)
+    compile_output = models.TextField(blank=True, null=True)
     language_id=models.ForeignKey(Language, on_delete=models.CASCADE)
     profile_id=models.ForeignKey(Profile_model.Profile, on_delete=models.CASCADE)
     contest_id=models.ForeignKey(Contest_model.Contest, on_delete=models.CASCADE)
