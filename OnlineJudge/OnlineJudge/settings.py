@@ -1,8 +1,9 @@
 import os
 import datetime
 from datetime import timedelta
+from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '_w0r7&!8ybz#xj!y8cob6&nn47e&(h*pu+ee35&#o*o!bxbhvx'
 
@@ -74,15 +75,12 @@ WSGI_APPLICATION = 'OnlineJudge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'onlinejudge_db',
-        'USER': 'oj_user',
-        'PASSWORD': 'secure_password_placeholder',  # IMPORTANT: This is a placeholder, change in production!
-        'HOST': 'db',  # Or 'localhost' if PostgreSQL is running locally
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
