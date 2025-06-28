@@ -1,7 +1,5 @@
 from django.db import models
 from colorfield.fields import ColorField
-from Contest import models as Contest_model
-from Profile import models as Profile_model
 
 # Create your models here.
 class Rating_Status(models.Model):
@@ -17,8 +15,8 @@ class Rating_Status(models.Model):
 
 
 class Rating_Change(models.Model):
-    contest_id=models.ForeignKey(Contest_model.Contest, on_delete=models.CASCADE)
-    profile_id=models.ForeignKey(Profile_model.Profile, on_delete=models.CASCADE)
+    contest_id=models.ForeignKey('Contest.Contest', on_delete=models.CASCADE)
+    profile_id=models.ForeignKey('Profile.Profile', on_delete=models.CASCADE)
     rating_change=models.IntegerField()
 
     def __str__(self) -> object:

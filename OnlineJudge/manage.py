@@ -2,14 +2,10 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from datetime import timedelta
 
-# Add monkey patch for smart_text
-import django.utils.encoding
-if not hasattr(django.utils.encoding, 'smart_text'):
-    django.utils.encoding.smart_text = django.utils.encoding.smart_str
 
 def main():
+    """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'OnlineJudge.settings')
     try:
         from django.core.management import execute_from_command_line
@@ -24,11 +20,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ],
-    # ...
-}

@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from Institution import models as Institution_model
 from django.contrib.auth.models import User
 import os
 from uuid import uuid4
@@ -33,7 +32,7 @@ class Profile(models.Model):
     mobile_no=PhoneNumberField(unique=True,  null=True)
     cur_rating=models.IntegerField(default=0,null=True)
     have_profile_image=models.ImageField(upload_to=UploadToPathAndRename(os.path.join('upload','profile_image')), null=True)
-    institution_id=models.ForeignKey(Institution_model.Institution, on_delete=models.SET_NULL,  null=True)
+    institution_id=models.ForeignKey('Institution.Institution', on_delete=models.SET_NULL,  null=True)
 
     def __str__(self) -> object:
         return '{}'.format(self.user)
