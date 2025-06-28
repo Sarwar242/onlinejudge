@@ -1,7 +1,4 @@
 from django.db import models
-from Profile import models as Profile_model
-from Contest import models as Contest_model
-from Problem import models as Problem_model
 
 # Create your models here.
 class Language(models.Model):
@@ -16,9 +13,9 @@ class Submission(models.Model):
     verdict=models.CharField(max_length=5)
     compile_output = models.TextField(blank=True, null=True)
     language_id=models.ForeignKey(Language, on_delete=models.CASCADE)
-    profile_id=models.ForeignKey(Profile_model.Profile, on_delete=models.CASCADE)
-    contest_id=models.ForeignKey(Contest_model.Contest, on_delete=models.CASCADE)
-    problem_id=models.ForeignKey(Problem_model.Problem, on_delete=models.CASCADE)
+    profile_id=models.ForeignKey('Profile.Profile', on_delete=models.CASCADE)
+    contest_id=models.ForeignKey('Contest.Contest', on_delete=models.CASCADE)
+    problem_id=models.ForeignKey('Problem.Problem', on_delete=models.CASCADE)
 
     
     def __str__(self) -> object:
